@@ -61,8 +61,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html", // .src/index.html 파일을 build경로에 index.html로 파일을 생성
-      filename: "index.html",
+      template: "src/index.html", // src/index.html 파일을 build경로에 index.html로 파일을 생성
+      filename: "./index.html",
+      chunks: ["index"],
     }),
     new MiniCssExtractPlugin({ filename: `[name].css` }), //결과물에서 스타일 코드만 뽑아서 별도 css 파일로 만들어 역할에 따라서 파일을 분리하는 것이 좋을 때 사용, 브라우저에서 큰 파일 하나를 받는 것보다 여러 개의 작은 파일을 동시에 처리하는게 빠르기 때문.
     new CleanWebpackPlugin(), // 빌드 이전의 결과물을 제거
